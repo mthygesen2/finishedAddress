@@ -20,6 +20,5 @@ describe('Address', function(){
   it("add the fullAddress method to all Address", function() {
     var testAddress = new Address("400 sw 5th ave", "Portland", "Oregon");
     expect(testAddress.fullAddress()).to.equal("400 sw 5th ave Portland, Oregon");
-
-});
+  });
 });
