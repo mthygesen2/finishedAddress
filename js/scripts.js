@@ -17,10 +17,20 @@ Contact.prototype.fullName = function() {
 Address.prototype.fullAddress = function() {
   return this.street + " " + this.city + ", " + this.state;
 }
+function resetFields() {
+  $("input#new-first-name").val("");
+  $("input#new-last-name").val("");
+  $("input.new-street").val("");
+  $("input.new-city").val("");
+  $("input.new-state").val("");
+  $("#new-addresses").not(".new-address").css("display","none");
+  $(".new-address2").remove();
 
+}
 $(document).ready(function() {
   $("#add-address").click(function() {
-    $("#new-addresses").append('<div class="new-address">' +
+    $("#new-addresses").show();
+    $("#new-addresses").append('<div class="new-address2">' +
                                 '<div class="form-group">' +
                                   '<label for="new-street">Street</label>' +
                                   '<input type="text" class="form-control new-street">' +
@@ -65,10 +75,6 @@ $(document).ready(function() {
       });
     });
 
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input.new-street").val("");
-    $("input.new-city").val("");
-    $("input.new-state").val("");
+    resetFields();
   });
 });
